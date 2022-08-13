@@ -7,8 +7,13 @@ First, run the development server:
 ```bash
 npm run dev
 # or
+<<<<<<< HEAD
+yarn dev
+``` 
+=======
 yarn dev 
 ```
+>>>>>>> 93ebb1fb964d525ed5589b8f948237e19d4285c0
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

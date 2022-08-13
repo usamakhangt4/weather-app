@@ -1,7 +1,15 @@
+import {Header} from "components/Header/Header";
+
 interface DefaultLayoutProps {
   children?: any;
 }
 
-export const DefaultLayout = () => {
-  return <h1>hi</h1>;
+export const DefaultLayout = (props: DefaultLayoutProps) => {
+  const {children} = props;
+  return (
+    <>
+      <Header />
+      {children}
+    </>
+  );
 };

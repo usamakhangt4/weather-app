@@ -60,8 +60,6 @@ export default function SelectField(props: SelectFieldProps) {
                 value={value}
                 defaultValue={value}
                 onChange={(value) => {
-                  console.log(value);
-
                   onChange(value);
                   handleChange && handleChange(value);
                 }}

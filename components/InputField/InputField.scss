@@ -1,3 +1,11 @@
 .inputFieldRoot {
   // outline: 1px solid red;
 }
+
+.hasError {
+  border: 1px solid red;
+  &:hover,&:focus {
+    border: 1px solid red;
+    box-shadow: none;
+  }
+}

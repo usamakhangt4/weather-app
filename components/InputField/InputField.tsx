@@ -34,16 +34,20 @@ export default function InputField(props: InputFieldProps) {
           const {name, onChange, value, ...rest} = field;
           const {errors} = formState;
           const {invalid} = fieldState;
-          console.log({errors, name}, "errors:::::");
+          const message = R.path([name], errors);
 
           return (
-            <Tooltip title={R.pathOr("", [name, "message"], errors)}>
+            <Tooltip
+              title={R.path(["message"], message)}
+              color="red"
+              placement="bottom">
               <Input
                 {...rest}
-                // status={errors && "error"}
+                status={invalid ? "error" : undefined}
                 disabled={disabled}
                 onChange={(val) => onChange(val)}
                 value={value}
+                className={invalid ? "hasError" : ""}
               />
             </Tooltip>
           );

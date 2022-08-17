@@ -7,6 +7,8 @@ import {useForm} from "react-hook-form";
 import SelectField from "components/SelectField/SelectField";
 import {weatherSearchValidations} from "validations";
 import {yupResolver} from "@hookform/resolvers/yup";
+import {WeatherByZip} from "./components/WeatherByZip/WeatherByZip";
+import {WaetherByCoords} from "./components/WeatherByLatLong/WeatherByLatLong";
 
 interface weatherAPIProps {
   weatherSearchString: string;
@@ -57,8 +59,12 @@ export default function Home() {
       {searchBy === "cityName" && searchString !== "" && (
         <WeatherByCityName cityName={searchString} />
       )}
-      {searchBy === "zipCode" && <p>zipCode</p>}
-      {searchBy === "coordinates" && <p>coordinates</p>}
+      {searchBy === "zipCode" && searchString !== "" && (
+        <WeatherByZip zipCode={searchString} />
+      )}
+      {searchBy === "coordinates" && searchString !== "" && (
+        <WaetherByCoords latLong={searchString} />
+      )}
     </DefaultLayout>
   );
 }
